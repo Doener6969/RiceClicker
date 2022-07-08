@@ -10,6 +10,7 @@ public class AutoReis : MonoBehaviour {
 
     void Update()
     {
+        ReisErhöhen = Reiskocher.ReiskocherProSekunde;
         InternalIncrease = ReisErhöhen;
         if(ReisErstellen == false) 
         {
