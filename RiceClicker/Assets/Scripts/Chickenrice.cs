@@ -4,27 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Reiskocher : MonoBehaviour
+public class Chickenrice : MonoBehaviour
 {
     public GameObject falscherKnopf;
     public GameObject falscherText;
     public GameObject echterKnopf;
     public GameObject echterText;
     public int aktuellerReis;
-    public static int ReiskocherAnzahl = 0;
-    public static int ReiskocherValue = 69;
+    public static int chickenriceAnzahl = 0;
+    public static int chickenriceValue = 750;
     public static bool KnopfAusschalten = false;
-    public GameObject ReiskocherStats;
-    public static int ReiskocherProSekunde = 0;
-   
+    public GameObject chickenriceStats;   
+    public static int chickenriceProSekunde = 0;
+    
 
 void Update()
     {
         aktuellerReis = ReisAnzahl.Reiskörner;
-        ReiskocherStats.GetComponent<TextMeshProUGUI>().text= "Reiskocher: " + ReiskocherAnzahl + " @ " + ReiskocherProSekunde + " Pro Sekunde";
-        falscherText.GetComponent<TextMeshProUGUI>().text = "Kaufe Reiskocher - Reis " + ReiskocherValue;
-        echterText.GetComponent<TextMeshProUGUI>().text = "Kaufe Reiskocher - Reis " + ReiskocherValue;
-        if (aktuellerReis >= ReiskocherValue)
+        chickenriceStats.GetComponent<TextMeshProUGUI>().text = "Chickenrice: " + chickenriceAnzahl + " @ " + chickenriceProSekunde + " Pro Sekunde";
+        falscherText.GetComponent<TextMeshProUGUI>().text = "Kaufe Chickenrice - Reis " + chickenriceValue;
+        echterText.GetComponent<TextMeshProUGUI>().text = "Kaufe Chickenrice - Reis " + chickenriceValue;
+        if (aktuellerReis >= chickenriceValue)
         {
             falscherKnopf.SetActive(false);
             echterKnopf.SetActive(true);

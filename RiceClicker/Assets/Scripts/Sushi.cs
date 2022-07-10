@@ -4,27 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Reiskocher : MonoBehaviour
+public class Sushi : MonoBehaviour
 {
     public GameObject falscherKnopf;
     public GameObject falscherText;
     public GameObject echterKnopf;
     public GameObject echterText;
     public int aktuellerReis;
-    public static int ReiskocherAnzahl = 0;
-    public static int ReiskocherValue = 69;
+    public static int SushiAnzahl = 0;
+    public static int SushiValue = 200;
     public static bool KnopfAusschalten = false;
-    public GameObject ReiskocherStats;
-    public static int ReiskocherProSekunde = 0;
-   
+    public GameObject SushiStats;
+    public static int SushiProSekunde = 0;
+
 
 void Update()
     {
         aktuellerReis = ReisAnzahl.Reiskörner;
-        ReiskocherStats.GetComponent<TextMeshProUGUI>().text= "Reiskocher: " + ReiskocherAnzahl + " @ " + ReiskocherProSekunde + " Pro Sekunde";
-        falscherText.GetComponent<TextMeshProUGUI>().text = "Kaufe Reiskocher - Reis " + ReiskocherValue;
-        echterText.GetComponent<TextMeshProUGUI>().text = "Kaufe Reiskocher - Reis " + ReiskocherValue;
-        if (aktuellerReis >= ReiskocherValue)
+        SushiStats.GetComponent<TextMeshProUGUI>().text = "Sushi: " + SushiAnzahl + " @ " + SushiProSekunde + " Pro Sekunde";
+        falscherText.GetComponent<TextMeshProUGUI>().text = "Kaufe Sushi - Reis " + SushiValue;
+        echterText.GetComponent<TextMeshProUGUI>().text = "Kaufe Sushi - Reis " + SushiValue;
+        if (aktuellerReis >= SushiValue)
         {
             falscherKnopf.SetActive(false);
             echterKnopf.SetActive(true);

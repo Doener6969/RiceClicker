@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AutoReis : MonoBehaviour {
-    public bool ReisErstellen = false;
+    public static bool ReisErstellen = false;
     public static int ReisErhöhen = 1;
     public int InternalIncrease;
 
 
     void Update()
     {
-        ReisErhöhen = Reiskocher.ReiskocherProSekunde;
+        ReisErhöhen = Reiskocher.ReiskocherProSekunde + Sushi.SushiProSekunde + Chickenrice.chickenriceProSekunde;
         InternalIncrease = ReisErhöhen;
         if(ReisErstellen == false) 
         {
