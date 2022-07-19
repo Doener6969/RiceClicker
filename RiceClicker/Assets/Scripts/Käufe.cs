@@ -14,60 +14,63 @@ public class Käufe : MonoBehaviour
 
     public void StartAutoReisReiskocher()
     {
-        if (ReisAnzahl.Reiskörner >= Reiskocher.ReiskocherValue)
+        if (ReisAnzahl.Reiskörner >= (long)Reiskocher.ReiskocherValue)
         {
             AutoReis.SetActive(true);
             ReisAnzahl.Reiskörner -= Reiskocher.ReiskocherValue;
-            Reiskocher.ReiskocherValue *= 2;
+            Reiskocher.ReiskocherAnzahl++;
+            Reiskocher.ReiskocherValue = (int)(Mathf.Log(Reiskocher.ReiskocherAnzahl+1, 10)*1000 + 69);
             Reiskocher.KnopfAusschalten = true;
             Sushi.KnopfAusschalten = true;
             Chickenrice.KnopfAusschalten = true;
             Reiskocher.ReiskocherProSekunde += ReiskocherReisProUpgrade;
-            Reiskocher.ReiskocherAnzahl += 1;
+        
         }
     }
     public void StartAutoReisSushi()
     {
-        if (ReisAnzahl.Reiskörner >= Sushi.SushiValue)
+        if (ReisAnzahl.Reiskörner >= (long)Sushi.SushiValue)
         {
             AutoReis.SetActive(true);
             ReisAnzahl.Reiskörner -= Sushi.SushiValue;
-            Sushi.SushiValue *= 2;
+            Sushi.SushiAnzahl++;
+            Sushi.SushiValue = (int)(Mathf.Log(Sushi.SushiAnzahl + 1, 10) * 1000 + 250);
             Reiskocher.KnopfAusschalten = true;
             Sushi.KnopfAusschalten = true;
             Chickenrice.KnopfAusschalten = true;
             Sushi.SushiProSekunde += SushiReisProUpgrade;
-            Sushi.SushiAnzahl += 1;
+            
         }
     }
 
     public void StartAutoReisChickenrice()
     {
-        if (ReisAnzahl.Reiskörner >= Chickenrice.chickenriceValue)
+        if (ReisAnzahl.Reiskörner >= (long)Chickenrice.chickenriceValue)
         {
             AutoReis.SetActive(true);
             ReisAnzahl.Reiskörner -= Chickenrice.chickenriceValue;
-            Chickenrice.chickenriceValue *= 2;                   
+            Chickenrice.chickenriceAnzahl++;
+            Chickenrice.chickenriceValue = (int)(Mathf.Log(Chickenrice.chickenriceAnzahl + 1, 10) * 1000 + 750);                   
             Reiskocher.KnopfAusschalten = true;
             Sushi.KnopfAusschalten = true;
             Chickenrice.KnopfAusschalten = true;
             Chickenrice.chickenriceProSekunde += ChickenriceReisProUpgrade;
-            Chickenrice.chickenriceAnzahl += 1;
+          
         }
     }
 
     public void ReisProKlickVerbessern()
     {
-        if (ReisAnzahl.Reiskörner >= ReisProKlick.ReisProKlickValue)
+        if (ReisAnzahl.Reiskörner >= (long)ReisProKlick.ReisProKlickValue)
         {
             ReisAnzahl.Reiskörner -= ReisProKlick.ReisProKlickValue;
-            ReisProKlick.ReisProKlickValue *= 2;
+            ReisProKlick.ReisProKlickStufe++;
+            ReisProKlick.ReisProKlickValue = (int)(Mathf.Log(ReisProKlick.ReisProKlickStufe + 1, 10) * 1000 + 5);
             Reiskocher.KnopfAusschalten = true;
             Sushi.KnopfAusschalten = true;
             Chickenrice.KnopfAusschalten = true;
             ReisProKlick.KnopfAusschalten = true;
             Klickfunktion.ReisProKlick += ReisProKlickReisProUpgrade;
-            ReisProKlick.ReisProKlickStufe++;
         }
     }
 

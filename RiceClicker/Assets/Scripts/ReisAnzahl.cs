@@ -6,9 +6,9 @@ using TMPro;
 
 public class ReisAnzahl : MonoBehaviour
 {
-    public static int Reiskörner;
+    public static long Reiskörner;
     public GameObject ReisAnzeige;
-    public int ReisKörnerAnzahl;
+    public long ReisKörnerAnzahl;
 
     void Update()
     {

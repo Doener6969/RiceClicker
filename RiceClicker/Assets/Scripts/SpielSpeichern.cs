@@ -7,7 +7,7 @@ public class Speichern : MonoBehaviour
     
     public void SpielSpeichern()
     {
-        PlayerPrefs.SetInt("GespeicherterReis", ReisAnzahl.Reiskörner);
+        PlayerPrefs.SetString("GespeicherterReis", ReisAnzahl.Reiskörner.ToString());
         PlayerPrefs.SetInt("GespeicherteReiskocher", Reiskocher.ReiskocherAnzahl);
         PlayerPrefs.SetInt("GespeichertesSushi", Sushi.SushiAnzahl);
         PlayerPrefs.SetInt("GespeicherterChickenrice", Chickenrice.chickenriceAnzahl);

@@ -10,7 +10,7 @@ public class Chickenrice : MonoBehaviour
     public GameObject falscherText;
     public GameObject echterKnopf;
     public GameObject echterText;
-    public int aktuellerReis;
+    public long aktuellerReis;
     public static int chickenriceAnzahl = 0;
     public static int chickenriceValue = 750;
     public static bool KnopfAusschalten = false;

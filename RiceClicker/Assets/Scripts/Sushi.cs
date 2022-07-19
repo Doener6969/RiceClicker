@@ -10,7 +10,7 @@ public class Sushi : MonoBehaviour
     public GameObject falscherText;
     public GameObject echterKnopf;
     public GameObject echterText;
-    public int aktuellerReis;
+    public long aktuellerReis;
     public static int SushiAnzahl = 0;
     public static int SushiValue = 200;
     public static bool KnopfAusschalten = false;

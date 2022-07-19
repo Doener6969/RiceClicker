@@ -10,7 +10,7 @@ public class Reiskocher : MonoBehaviour
     public GameObject falscherText;
     public GameObject echterKnopf;
     public GameObject echterText;
-    public int aktuellerReis;
+    public long aktuellerReis;
     public static int ReiskocherAnzahl = 0;
     public static int ReiskocherValue = 69;
     public static bool KnopfAusschalten = false;

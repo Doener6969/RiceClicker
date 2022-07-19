@@ -2,46 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+
 
 public class SpielLaden : MonoBehaviour
 {
-    public GameObject AutoReis;
+    public GameObject AutoR;
      
+
     void Start()
     {
-       if(HauptmenüOptionen.imLadevorgang)
+        AutoR.SetActive(false);
+        AutoReis.ReisErstellen = false;
+
+        if (HauptmenüOptionen.imLadevorgang)
         {
-            
-            ReisAnzahl.Reiskörner = PlayerPrefs.GetInt("GespeicherterReis");
+
+            ReisAnzahl.Reiskörner = long.Parse(PlayerPrefs.GetString("GespeicherterReis"));
+
             Reiskocher.ReiskocherAnzahl = PlayerPrefs.GetInt("GespeicherteReiskocher");
+            Reiskocher.ReiskocherValue = PlayerPrefs.GetInt("GReiskocherValue");
+            Reiskocher.ReiskocherProSekunde = PlayerPrefs.GetInt("GRPSReiskocher");
+
+
             Sushi.SushiAnzahl = PlayerPrefs.GetInt("GespeichertesSushi");
+            Sushi.SushiValue = PlayerPrefs.GetInt("GSushiValue");
+            Sushi.SushiProSekunde = PlayerPrefs.GetInt("GRPSSushi");
+
             Chickenrice.chickenriceAnzahl = PlayerPrefs.GetInt("GespeicherterChickenrice");
+            Chickenrice.chickenriceValue = PlayerPrefs.GetInt("GChickenriceValue");
+            Chickenrice.chickenriceProSekunde = PlayerPrefs.GetInt("GRPSchickenrice");
+
+
+
             Klickfunktion.ReisProKlick = PlayerPrefs.GetInt("GespeicherterReisProKlick");
-            if (Reiskocher.ReiskocherAnzahl != 0)
-            {
-                Reiskocher.ReiskocherValue *= ((int)(Mathf.Pow(2, Reiskocher.ReiskocherAnzahl)));
-                Reiskocher.ReiskocherProSekunde = Käufe.ReiskocherReisProUpgrade * Reiskocher.ReiskocherAnzahl;
-            }
-            if (Sushi.SushiAnzahl != 0)
-            {
-                Sushi.SushiValue *= ((int)(Mathf.Pow(2, Sushi.SushiAnzahl)));
-                Sushi.SushiProSekunde = Käufe.SushiReisProUpgrade * Sushi.SushiAnzahl;
-            }
-            if (Chickenrice.chickenriceAnzahl != 0)
-            {
-                Chickenrice.chickenriceValue *= ((int)(Mathf.Pow(2, Chickenrice.chickenriceAnzahl)));
-                Chickenrice.chickenriceProSekunde = Käufe.ChickenriceReisProUpgrade * Chickenrice.chickenriceAnzahl;
-            }
+            
             if (Reiskocher.ReiskocherAnzahl != 0 || Sushi.SushiAnzahl != 0 || Chickenrice.chickenriceAnzahl != 0)
             {
-                AutoReis.SetActive(true);
+                AutoR.SetActive(true);
+                AutoReis.ReisErstellen = false;
             }
-            if(Klickfunktion.ReisProKlick > 1)
+            if (Klickfunktion.ReisProKlick > 1)
             {
-                ReisProKlick.ReisProKlickStufe = ((int)(Mathf.Ceil(Klickfunktion.ReisProKlick / Käufe.ReisProKlickReisProUpgrade)))+1;
-                ReisProKlick.ReisProKlickValue *= ((int)(Mathf.Pow(2, (ReisProKlick.ReisProKlickStufe-1))));
+                ReisProKlick.ReisProKlickStufe = ((int)(Mathf.Ceil(Klickfunktion.ReisProKlick / Käufe.ReisProKlickReisProUpgrade))) + 1;
+                ReisProKlick.ReisProKlickValue *= ((int)(Mathf.Pow(2, (ReisProKlick.ReisProKlickStufe - 1))));
             }
+            HauptmenüOptionen.imLadevorgang = false;
         }
     }
 

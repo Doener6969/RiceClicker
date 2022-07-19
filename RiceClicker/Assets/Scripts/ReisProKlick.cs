@@ -6,7 +6,7 @@ using TMPro;
 
 public class ReisProKlick : MonoBehaviour
 {
-    public int aktuellerReis;
+    public long aktuellerReis;
     public GameObject falscherKnopf;
     public GameObject falscherText;
     public GameObject echterKnopf;
