@@ -35,16 +35,13 @@ public class SpielLaden : MonoBehaviour
 
 
             Klickfunktion.ReisProKlick = PlayerPrefs.GetInt("GespeicherterReisProKlick");
-            
+            ReisProKlick.ReisProKlickValue = PlayerPrefs.GetInt("GReisProKlickValue");
+            ReisProKlick.ReisProKlickStufe = PlayerPrefs.GetInt("GReisProKlickStufe");
+
             if (Reiskocher.ReiskocherAnzahl != 0 || Sushi.SushiAnzahl != 0 || Chickenrice.chickenriceAnzahl != 0)
             {
                 AutoR.SetActive(true);
                 AutoReis.ReisErstellen = false;
-            }
-            if (Klickfunktion.ReisProKlick > 1)
-            {
-                ReisProKlick.ReisProKlickStufe = ((int)(Mathf.Ceil(Klickfunktion.ReisProKlick / Käufe.ReisProKlickReisProUpgrade))) + 1;
-                ReisProKlick.ReisProKlickValue *= ((int)(Mathf.Pow(2, (ReisProKlick.ReisProKlickStufe - 1))));
             }
             HauptmenüOptionen.imLadevorgang = false;
         }

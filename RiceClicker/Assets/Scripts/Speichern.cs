@@ -24,6 +24,9 @@ public class SpielSpeichern : MonoBehaviour
 
 
         PlayerPrefs.SetInt("GespeicherterReisProKlick", Klickfunktion.ReisProKlick);
+        PlayerPrefs.SetInt("GReisProKlickValue", ReisProKlick.ReisProKlickValue);
+        PlayerPrefs.SetInt("GReisProKlickStufe", ReisProKlick.ReisProKlickStufe);
+        
 
 
     }

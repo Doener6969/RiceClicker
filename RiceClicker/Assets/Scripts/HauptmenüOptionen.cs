@@ -50,7 +50,7 @@ public class HauptmenüOptionen : MonoBehaviour
         }
         else
         {
-            statusMeldung.GetComponent<TextMeshProUGUI>().text = "Kein Speicherstand verhanden";
+            statusMeldung.GetComponent<TextMeshProUGUI>().text = "Kein Speicherstand vorhanden";
             statusMeldung.GetComponent<Animation>().Play("StatusAnimation");
         }
         
